@@ -13,7 +13,7 @@ module Humanity
       ["eating"]
     end
 
-    def eat_breakfast
+    def eat_lunch
       @tummy = "full"
       @emotion = "happy"
     end

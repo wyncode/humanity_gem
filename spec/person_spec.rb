@@ -23,7 +23,7 @@ RSpec.describe Humanity::Person do
   context "after lunch" do
 
     before do
-      person.eat_breakfast
+      person.eat_lunch
     end
 
     it "is full" do
