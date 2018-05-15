@@ -56,15 +56,14 @@ module Humanity
           "DELETE FROM people
           WHERE id = #{self.id}"
         )
-        @id = nil
       end
-      self
+      true
     end
 
     def attributes
       attrs = {}
       @@attributes.each do |attribute|
-        attrs[attribute] = send(attribute)
+        attrs[attribute.to_s] = send(attribute)
       end
       attrs
     end

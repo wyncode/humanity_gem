@@ -61,7 +61,7 @@ RSpec.describe Humanity::Person do
 
     person.delete
 
-    expect(person.id).to eq(nil)
+    expect(Humanity::Person.find(person.id)).to eq(nil)
   end
 
   it "can be retrieved as a collection" do
@@ -82,10 +82,10 @@ RSpec.describe Humanity::Person do
 
   it "can display its attributes" do
     expected = {
-                  first_name: "Andy",
-                  last_name: "Weiss",
-                  tummy: "grumbling",
-                  emotion: "sad"
+                  "first_name" => "Andy",
+                  "last_name" => "Weiss",
+                  "tummy" => "grumbling",
+                  "emotion" => "sad"
                 }
     expect(person.attributes).to include(expected)
   end
