@@ -74,8 +74,6 @@ module Humanity
         WHERE id = #{id}"
       ).first
       self.from_record(record)
-    rescue
-      nil
     end
 
     def self.all

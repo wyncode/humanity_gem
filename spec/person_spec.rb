@@ -61,7 +61,7 @@ RSpec.describe Humanity::Person do
 
     person.delete
 
-    expect(Humanity::Person.find(person.id)).to eq(nil)
+    expect{ (Humanity::Person.find(person.id)) }.to raise_error
   end
 
   it "can be retrieved as a collection" do
