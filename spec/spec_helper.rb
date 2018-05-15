@@ -12,3 +12,5 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+RSpec::Expectations.configuration.on_potential_false_positives = :nothing
