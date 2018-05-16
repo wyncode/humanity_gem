@@ -11,11 +11,12 @@ module Humanity
     attr_reader :id
     attr_accessor *@@public_attributes
 
-    def initialize(first_name: nil, last_name: nil, tummy: "grumbling", emotion: "sad")
-      @first_name = first_name
-      @last_name  = last_name
-      @tummy      = tummy
-      @emotion    = emotion
+    def initialize(attributes={})
+      attributes.symbolize_keys!
+      @first_name = attributes[:first_name]
+      @last_name  = attributes[:last_name]
+      @tummy      = attributes[:tummy]    || "grumbling"
+      @emotion    = attributes[:emotion]  || "sad"
     end
 
     def skills
@@ -93,7 +94,7 @@ module Humanity
     private
 
     def self.from_record(record)
-      instance = self.new(record.symbolize_keys.except(:id))
+      instance = self.new(record.except("id"))
       instance.instance_variable_set(:@id, record["id"])
       instance
     end
