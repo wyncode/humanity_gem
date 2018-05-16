@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    humanity (0.1.0)
+    humanity (0.2.0)
       activesupport (~> 5.2)
       pg (~> 1.0)
 
