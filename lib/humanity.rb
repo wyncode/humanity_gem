@@ -7,7 +7,7 @@ module Humanity
   class Person
     @@connection = PG::Connection.open(dbname: 'contacts')
     @@attributes = [:tummy, :emotion, :first_name, :last_name, :id]
-    @@public_attributes = [:tummy, :emotion, :first_name, :last_name]
+    @@public_attributes = @@attributes.reject{|attr| attr == :id}
     attr_reader :id
     attr_accessor *@@public_attributes
 
